@@ -10,31 +10,26 @@ namespace RNGCryptoServiceProvider_DEMO
     {
         static void Main(string[] args)
         {
-            ConsoleColor fgColor = Console.ForegroundColor;
+            ConsoleColor fgColor = Console.ForegroundColor; //Default initial color
 
 
-        DoItAgain:
+            DoItAgain:
 
             Console.Clear();
+            PrintInfo(); //Show info and instructions
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("Random Class");
+           
+           
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Random class\tRNGCryptoServiceProvider class");
             Console.ForegroundColor = fgColor;
 
-            Random rnd = new Random();
-            // Ten iterations.
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(rnd.Next());
-            }
+            //Instantiate a new object of Random and RNGCryptoServiceProvider classes
+            Random rnd = new Random(); //https://msdn.microsoft.com/en-us/library/system.random
+            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider(); //https://msdn.microsoft.com/en-us/library/system.security.cryptography.rngcryptoserviceprovider
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("RNGCryptoServiceProvider");
-            Console.ForegroundColor = fgColor;
-        
-            RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
             // Buffer storage.
-            byte[] data = new byte[4];
+            byte[] data = new byte[8];
 
             // Ten iterations.
             for (int i = 0; i < 10; i++)
@@ -42,17 +37,27 @@ namespace RNGCryptoServiceProvider_DEMO
                 // Fill buffer.
                 rng.GetBytes(data);
 
-                // Convert to int 32.
-                int value = BitConverter.ToInt32(data, 0);
-                string value2 = Convert.ToBase64String(data);
-                Console.WriteLine(value + "\t" + value2);
+                int intValue = BitConverter.ToInt32(data, 0); //Integer
+                string hexValue = BitConverter.ToString(data).Replace("-",""); //Hex
+                string base64Value = Convert.ToBase64String(data); //Base64
+
+                Console.WriteLine(rnd.Next() + "\t" + intValue.ToString() + "\t" + hexValue + "\t" + base64Value);
+               
             }
 
-            if (Console.ReadLine() == "X")
+            if (Console.ReadLine().ToUpper() == "X") //Exit
             {
                 return;
             }
             goto DoItAgain;
+
+        }
+
+        private static void PrintInfo()
+        {
+            Console.WriteLine("Random class vs. RNGCryptoServiceProvider class");
+            Console.WriteLine("[Press Enter to refresh the auto-generated values; Type X and press enter to exit]");
+            Console.WriteLine(string.Empty);
 
         }
     }
