@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("RNGCryptoServiceProvider_DEMO")]
 [assembly: AssemblyDescription("RNGCryptoServiceProvider Demo by Naji El Kotob")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Business Intelligence Group BIG SARL")]
 [assembly: AssemblyProduct("RNGCryptoServiceProvider_DEMO")]
-[assembly: AssemblyCopyright("Copyright ©  DotNET Hereos 2015")]
+[assembly: AssemblyCopyright("Copyright © BIG SARL 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

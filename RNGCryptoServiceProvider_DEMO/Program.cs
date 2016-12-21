@@ -17,7 +17,7 @@ namespace RNGCryptoServiceProvider_DEMO
 
             Console.Clear();
 
-        Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Random Class");
             Console.ForegroundColor = fgColor;
 
