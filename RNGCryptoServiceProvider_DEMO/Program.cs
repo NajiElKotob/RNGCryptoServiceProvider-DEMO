@@ -1,8 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/*
+╔╗╔┌─┐ ┬┬  ╔═╗┬    ╦╔═┌─┐┌┬┐┌─┐┌┐ 
+║║║├─┤ ││  ║╣ │    ╠╩╗│ │ │ │ │├┴┐
+╝╚╝┴ ┴└┘┴  ╚═╝┴─┘  ╩ ╩└─┘ ┴ └─┘└─┘
+© 2015 Naji El Kotob
+
+This project "RNGCryptoServiceProvider-DEMO" is part of my security training demo
+
+The RNGCryptoServiceProvider-DEMO project is a free code: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+The RNGCryptoServiceProvider-DEMO project is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY.
+See the GNU Lesser General Public License <http://www.gnu.org/licenses/> for more details.
+*/
+
+
+using System;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace RNGCryptoServiceProvider_DEMO
 {
