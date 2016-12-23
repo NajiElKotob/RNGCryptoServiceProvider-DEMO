@@ -1,2 +1,2 @@
 # RNGCryptoServiceProvider-DEMO
-RNGCryptoServiceProvider Class DEMO
+RNGCryptoServiceProvider class vs. Random class
