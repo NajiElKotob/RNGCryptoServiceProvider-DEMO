@@ -30,7 +30,7 @@ namespace RNGCryptoServiceProvider_DEMO
 
             // Buffer storage.
             var arraySize = 8;
-            byte[] data = new byte[arraySize];
+            
 
             //Instantiate a new object of Random and RNGCryptoServiceProvider classes
             Random rnd = new Random(); //https://msdn.microsoft.com/en-us/library/system.random
@@ -40,6 +40,8 @@ namespace RNGCryptoServiceProvider_DEMO
             DoItAgain:
 
             Console.Clear();
+
+            byte[] data = new byte[arraySize];
 
             //Print info and help
             PrintInfo();
@@ -71,13 +73,21 @@ namespace RNGCryptoServiceProvider_DEMO
             PrintRecords(string.Empty);
             PrintRecords("Array Size: " + arraySize.ToString());
 
-            //'X' to Exit
-            if (Console.ReadLine().ToUpper() == "X")
+           
+            var input = Console.ReadLine();
+            int newArraySize;
+            if (int.TryParse(input, out newArraySize))  //# to change the array size
+            {
+                newArraySize = newArraySize < 4 ? 4 : newArraySize;
+                newArraySize = newArraySize > 9 ? 9 : newArraySize;
+                arraySize = newArraySize;
+            }
+            else if (input.ToUpper() == "X")  //'X' to Exit
             {
                 return; 
             }
-
-            //'Enter' to DoItAgain
+            
+            //If not 'X' than referesh
             goto DoItAgain;
 
         }
@@ -86,6 +96,7 @@ namespace RNGCryptoServiceProvider_DEMO
         {
             Console.WriteLine("RNGCryptoServiceProvider-DEMO by Naji El Kotob");
             Console.WriteLine("...[Press Enter to refresh the auto-generated values]");
+            Console.WriteLine("...[Type a number (4-9) and press enter to change the array size]");
             Console.WriteLine("...[Type X and press enter to exit]");
             Console.WriteLine(string.Empty);
         }
